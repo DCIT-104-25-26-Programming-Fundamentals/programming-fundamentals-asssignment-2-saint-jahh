@@ -57,3 +57,20 @@
 #include <iostream>
 using namespace std;
 
+void multiplicationTable(int number, int limit = 10) {
+    for (int multiplier = 1; multiplier <= limit; multiplier++) {
+        cout << number << " x " << multiplier << " = " << number * multiplier << endl;
+    }
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    cout << "Multiplication table for " << number << ":" << endl;
+    multiplicationTable(number);
+
+    return 0;
+}
+

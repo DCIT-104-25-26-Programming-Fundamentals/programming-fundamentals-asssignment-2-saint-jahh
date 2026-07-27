@@ -49,5 +49,40 @@
 // =============================================================================
 
 #include <iostream>
+#include <vector>
 using namespace std;
+
+vector<int> fibonacciSequence(int n) {
+    vector<int> sequence;
+    if (n <= 0) return sequence;
+
+    int a = 0, b = 1;
+    for (int i = 0; i < n; i++) {
+        sequence.push_back(a);
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+    return sequence;
+}
+
+int main() {
+    int n;
+    cout << "How many Fibonacci numbers? ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Please enter a positive number." << endl;
+        return 0;
+    }
+
+    vector<int> sequence = fibonacciSequence(n);
+    cout << "Fibonacci sequence:" << endl;
+    for (int value : sequence) {
+        cout << value << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
 
